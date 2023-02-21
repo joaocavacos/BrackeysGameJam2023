@@ -10,10 +10,13 @@ using Vector3 = UnityEngine.Vector3;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private Animator playerAnimator;
 
     [Header("Movement")]
     [SerializeField] private float moveSpeed;
     private float moveX;
+    private bool facingRight = true;
+    
 
     [Header("Jumping")]
     [SerializeField] private float jumpForce;
@@ -22,17 +25,33 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        playerAnimator = GetComponent<Animator>();
     }
 
     void Update()
     {
-        GetInput();
-        if (Input.GetButton("Jump") && isGrounded()) Jump();
+        if (!UIManager.Instance.isPaused)
+        {
+            GetInput();
+            if (Input.GetButton("Jump") && isGrounded())
+            {
+                Jump();
+                playerAnimator.SetBool("IsJumping", true);
+            }
+            else if (isGrounded())
+            {
+                playerAnimator.SetBool("IsJumping", false);
+            }
+            playerAnimator.SetFloat("Speed", Mathf.Abs(moveX));
+        }
     }
 
     void FixedUpdate()
     {
         Move();
+        
+        if(moveX > 0 && !facingRight) Flip();
+        if(moveX < 0 && facingRight) Flip();
     }
 
     private void GetInput()
@@ -42,7 +61,7 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        rb.velocity = new Vector2(moveX * moveSpeed, rb.velocity.y);
+        rb.velocity = new Vector2(moveX * moveSpeed * PlayerStats.Instance.agilityValue, rb.velocity.y);
     }
 
     private void Jump()
@@ -50,9 +69,18 @@ public class PlayerController : MonoBehaviour
         rb.velocity = new Vector2(0f, jumpForce);
     }
 
+    private void Flip()
+    {
+        Vector3 currentScale = transform.localScale;
+        currentScale.x *= -1;
+        transform.localScale = currentScale;
+
+        facingRight = !facingRight;
+    }
+
     private bool isGrounded()
     {
-        float distanceToGround = 1.5f;
+        float distanceToGround = 1.05f;
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, distanceToGround, groundLayer);
 
         if (hit.collider != null) return true;
@@ -62,6 +90,6 @@ public class PlayerController : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Debug.DrawRay(transform.position, Vector2.down * 1.5f, Color.red);
+        Debug.DrawRay(transform.position, Vector2.down * 1.05f, Color.red);
     }
 }
