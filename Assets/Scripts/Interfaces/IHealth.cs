@@ -5,5 +5,5 @@ using UnityEngine;
 public interface IHealth
 {
     public void LoseHealth(float damage);
-    public void Die();
+    //public void Die();
 }

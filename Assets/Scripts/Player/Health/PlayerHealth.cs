@@ -3,12 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour, IHealth
 {
     public static PlayerHealth Instance;
-    
+
     public float currentHealth;
     public float maxHealth;
 
@@ -32,24 +33,18 @@ public class PlayerHealth : MonoBehaviour, IHealth
 
     void Update()
     {
-        //HealthChecker();
         UIManager.Instance.UpdateHealth();
     }
 
     public void LoseHealth(float damage)
     {
         currentHealth -= damage;
-        if(currentHealth <= 0) Die();
+        if (currentHealth <= 0) Die();
     }
 
     public void Die()
     {
-        UIManager.Instance.EndGame();
-        gameObject.SetActive(false);
+        SceneManager.Instance.OnGameOver?.Invoke();
     }
 
-    private void HealthChecker()
-    {
-        if (currentHealth > maxHealth) currentHealth = maxHealth;
-    }
 }

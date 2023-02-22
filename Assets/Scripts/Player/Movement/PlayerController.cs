@@ -1,9 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Numerics;
 using UnityEngine;
-using UnityEngine.Events;
 using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
 
@@ -11,6 +9,8 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Animator playerAnimator;
+
+    private Transform playerStartPos;
 
     [Header("Movement")]
     [SerializeField] private float moveSpeed;
@@ -26,11 +26,13 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
+        playerStartPos = transform;
+        Debug.Log(playerStartPos.position);
     }
 
     void Update()
     {
-        if (!UIManager.Instance.isPaused)
+        if (!SceneManager.Instance.isPaused)
         {
             GetInput();
             if (Input.GetButton("Jump") && isGrounded())
@@ -77,6 +79,8 @@ public class PlayerController : MonoBehaviour
 
         facingRight = !facingRight;
     }
+    
+    public void ResetStartingPosition() => transform.position = playerStartPos.position;
 
     private bool isGrounded()
     {

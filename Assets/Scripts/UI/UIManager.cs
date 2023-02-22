@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Globalization;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -31,14 +30,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Button increaseINT;
     
     [SerializeField] private TMP_Text totalPointsText;
-    [SerializeField] private GameObject upgraderCanvas;
-    [SerializeField] private TMP_Text timeElapsedText;
-    [SerializeField] private TMP_Text killCountText;
-    [SerializeField] private TMP_Text currentRunPointsText;
-
-    [SerializeField] private GameObject enemySpawner;
-
-    public bool isPaused = false;
+    public TMP_Text timeElapsedText;
+    public TMP_Text killCountText;
+    public TMP_Text currentRunPointsText;
     
     void Awake()
     {
@@ -59,33 +53,13 @@ public class UIManager : MonoBehaviour
         UpdateUpgradeButtons();
     }
 
-    public void EndGame()
-    {
-        isPaused = true;
-        PointsManager.Instance.EndGamePoints(timeElapsedText, killCountText, currentRunPointsText);
-        UpdateUpgradeButtons();
-        Time.timeScale = 0;
-        upgraderCanvas.SetActive(true);
-        enemySpawner.SetActive(false);
-    }
-
-    public void RestartGame()
-    {
-        isPaused = false;
-        Time.timeScale = 1;
-        PointsManager.Instance.ResetRunStats();
-        PlayerHealth.Instance.gameObject.SetActive(true);
-        enemySpawner.SetActive(true);
-        UpdateMaxHealth();
-    }
-
     public void UpdateHealth()
     {
         healthSlider.value = PlayerHealth.Instance.currentHealth;
         healthText.text = Mathf.RoundToInt(PlayerHealth.Instance.currentHealth).ToString(CultureInfo.InvariantCulture);
     }
     
-    private void UpdateMaxHealth() => healthSlider.maxValue = PlayerHealth.Instance.maxHealth;
+    public void UpdateMaxHealth() => healthSlider.maxValue = PlayerHealth.Instance.maxHealth;
 
     public void UpdateUpgradeButtons()
     {
@@ -206,7 +180,7 @@ public class UIManager : MonoBehaviour
 
     public void UpdatePoints() => totalPointsText.text = "Points: " + PointsManager.Instance.GetCurrentPoints().ToString(CultureInfo.InvariantCulture);
 
-    public void ApplyStats()
+    /*public void ApplyStats()
     {
         PlayerPrefs.SetFloat("StrengthValue", PlayerStats.Instance.strengthValue);
         PlayerPrefs.SetFloat("AgilityValue", PlayerStats.Instance.agilityValue);
@@ -219,7 +193,7 @@ public class UIManager : MonoBehaviour
         PlayerPrefs.SetFloat("UpgradeDEX", PointsManager.Instance.upgradeCostDEX);
         PlayerPrefs.SetFloat("UpgradeVIT", PointsManager.Instance.upgradeCostVIT);
         PlayerPrefs.SetFloat("UpgradeINT", PointsManager.Instance.upgradeCostINT);
-    }
+    }*/
 
     public void LoadStats()
     {

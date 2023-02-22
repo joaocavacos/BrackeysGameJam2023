@@ -37,13 +37,10 @@ public class PointsManager : MonoBehaviour
 
     void Update()
     {
-        if(!UIManager.Instance.isPaused) CalculateTimeElapsed();
+        if(!SceneManager.Instance.isPaused) CalculateTimeElapsed();
     }
 
-    public void AddTotalPoints(float value)
-    {
-        totalPoints += value;
-    }
+    public void AddTotalPoints(float value) => totalPoints += value;
 
     public void IncreaseKillPoints(int value)
     {
@@ -51,18 +48,15 @@ public class PointsManager : MonoBehaviour
         killCountRun++;
     }
 
-    public void UsePoints(float value)
-    {
-        totalPoints -= value;
-    }
+    public void UsePoints(float value) => totalPoints -= value;
 
-    public void EndGamePoints(TMP_Text time, TMP_Text kills, TMP_Text totalPointsRun)
+    public void EndGamePoints()
     {
         var timeString = $"{hourCount:00}:{minuteCount:00}:{secondsCount:00}";
 
-        time.text = "Time: " + timeString;
-        kills.text = "Kills: " + killCountRun; 
-        totalPointsRun.text = "Points in the run: " + FinalPointsRun();
+        UIManager.Instance.timeElapsedText.text = "Time: " + timeString;
+        UIManager.Instance.killCountText.text = "Kills: " + killCountRun; 
+        UIManager.Instance.currentRunPointsText.text = "Points in the run: " + FinalPointsRun();
         AddTotalPoints(FinalPointsRun());
         UIManager.Instance.UpdatePoints();
     }
