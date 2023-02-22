@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Animator playerAnimator;
 
-    private Transform playerStartPos;
+    private Vector3 playerStartPos;
 
     [Header("Movement")]
     [SerializeField] private float moveSpeed;
@@ -26,8 +26,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
-        playerStartPos = transform;
-        Debug.Log(playerStartPos.position);
+        playerStartPos = transform.position;
     }
 
     void Update()
@@ -79,8 +78,11 @@ public class PlayerController : MonoBehaviour
 
         facingRight = !facingRight;
     }
-    
-    public void ResetStartingPosition() => transform.position = playerStartPos.position;
+
+    public void ResetStartingPosition()
+    {
+        transform.position = playerStartPos;
+    }
 
     private bool isGrounded()
     {

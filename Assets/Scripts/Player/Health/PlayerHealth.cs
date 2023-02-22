@@ -42,6 +42,12 @@ public class PlayerHealth : MonoBehaviour, IHealth
         if (currentHealth <= 0) Die();
     }
 
+    public void Heal(float amount)
+    {
+        currentHealth += amount;
+        if (currentHealth > maxHealth) currentHealth = maxHealth;
+    }
+
     public void Die()
     {
         SceneManager.Instance.OnGameOver?.Invoke();
