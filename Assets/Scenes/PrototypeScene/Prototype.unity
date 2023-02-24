@@ -3327,7 +3327,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14ce68245a03cc845a7c62b1c935d61b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilitiesSelected: []
+  abilitiesSelected:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!96 &1015339793
 TrailRenderer:
   serializedVersion: 2
@@ -4469,6 +4472,7 @@ GameObject:
   - component: {fileID: 1358618766}
   - component: {fileID: 1358618765}
   - component: {fileID: 1358618767}
+  - component: {fileID: 1358618768}
   m_Layer: 0
   m_Name: AbilityManager
   m_TagString: Untagged
@@ -4521,6 +4525,20 @@ MonoBehaviour:
   stepDistance: 3
   stepTime: 0.1
   trailRenderer: {fileID: 1015339793}
+--- !u!114 &1358618768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358618764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a8c3cdf6307a6b49a0885d5e9a3c416, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 2
+  shardPrefab: {fileID: 3742765272462940668, guid: 23c829764386e994a8e25f165d297e4f, type: 3}
 --- !u!1 &1376810764
 GameObject:
   m_ObjectHideFlags: 0

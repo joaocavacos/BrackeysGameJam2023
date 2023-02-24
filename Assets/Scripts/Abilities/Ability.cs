@@ -12,7 +12,7 @@ public abstract class Ability : MonoBehaviour
 
     public abstract void Cast();
     
-    protected virtual void Start()
+    protected void Start()
     {
         Caster.Instance.AddAbility(this);
     }
