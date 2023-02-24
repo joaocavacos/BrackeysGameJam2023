@@ -2,13 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Caster : MonoBehaviour, ISerializationCallbackReceiver
+public class Caster : MonoBehaviour
 {
-    public static List<Ability> abilitiesSelected;
-    [SerializeField] private List<Ability> showAbilities; //used to serialize the abilityList
+    //public static List<Ability> abilitiesSelected;
+    [SerializeField] private List<Ability> abilitiesSelected;
+
+    public static Caster Instance;
 
     private void Awake()
     {
+        Instance = this;
+        
         abilitiesSelected = new List<Ability>();
     }
 
@@ -19,16 +23,13 @@ public class Caster : MonoBehaviour, ISerializationCallbackReceiver
             abilitiesSelected[0].nextCastCooldown = Time.time + abilitiesSelected[0].abilityCooldown;
             abilitiesSelected[0].Cast();
         }
+
+        if(Input.GetKeyDown(KeyCode.R) && Time.time > abilitiesSelected[1].nextCastCooldown){
+            abilitiesSelected[1].nextCastCooldown = Time.time + abilitiesSelected[1].abilityCooldown;
+            abilitiesSelected[1].Cast();
+        }
     }
 
-    public void OnBeforeSerialize()
-    {
-        showAbilities = abilitiesSelected;
-    }
-
-    public void OnAfterDeserialize()
-    {
-        abilitiesSelected = showAbilities;
-    }
+    public void AddAbility(Ability ability) => abilitiesSelected.Add(ability);
 
 }

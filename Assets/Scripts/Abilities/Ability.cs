@@ -5,15 +5,15 @@ using UnityEngine;
 public abstract class Ability : MonoBehaviour
 {
     [SerializeField] private float cooldown;
-    [SerializeField] private float nextCast;
-
-    protected virtual void Start()
-    {
-        Caster.abilitiesSelected.Add(this);
-    }
+    private float nextCast;
 
     public float abilityCooldown { get { return cooldown; } set { cooldown = value; } }
     public float nextCastCooldown { get { return nextCast; } set { nextCast = value; } }
 
     public abstract void Cast();
+    
+    protected virtual void Start()
+    {
+        Caster.Instance.AddAbility(this);
+    }
 }

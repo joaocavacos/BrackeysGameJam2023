@@ -7,7 +7,9 @@ using Vector3 = UnityEngine.Vector3;
 
 public class PlayerController : MonoBehaviour
 {
-    private Rigidbody2D rb;
+
+    public static PlayerController Instance;
+    [HideInInspector] public Rigidbody2D rb;
     private Animator playerAnimator;
 
     private Vector3 playerStartPos;
@@ -15,7 +17,7 @@ public class PlayerController : MonoBehaviour
     [Header("Movement")]
     [SerializeField] private float moveSpeed;
     private float moveX;
-    private bool facingRight = true;
+    [HideInInspector] public bool facingRight = true;
     
 
     [Header("Jumping")]
@@ -24,6 +26,7 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
+        Instance = this;
         rb = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
         playerStartPos = transform.position;

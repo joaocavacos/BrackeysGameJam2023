@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class HealingAura : Ability
 {
-
     [SerializeField] private float healAmount;
 
     protected override void Start()
