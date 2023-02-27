@@ -2,17 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Caster : MonoBehaviour
+public class Caster : StaticInstance<Caster>
 {
-    //public static List<Ability> abilitiesSelected;
     [SerializeField] private List<Ability> abilitiesSelected;
 
-    public static Caster Instance;
 
-    private void Awake()
+    protected override void Awake()
     {
-        Instance = this;
-        
+        base.Awake();        
         abilitiesSelected = new List<Ability>();
     }
 

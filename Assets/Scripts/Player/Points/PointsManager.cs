@@ -4,10 +4,8 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class PointsManager : MonoBehaviour
+public class PointsManager : PersistentSingleton<PointsManager>
 {
-    public static PointsManager Instance;
-    
     public float totalPoints;
     [SerializeField] private float timePoints;
     [SerializeField] private float killPoints;
@@ -22,14 +20,7 @@ public class PointsManager : MonoBehaviour
     private int hourCount;
     private int minuteCount;
     private float secondsCount;
-
-    void Awake()
-    {
-        if (Instance != null && Instance != this) Destroy(gameObject);
-        else Instance = this;
-        DontDestroyOnLoad(this);
-    }
-
+    
     private void Start()
     {
         UIManager.Instance.UpdatePoints();

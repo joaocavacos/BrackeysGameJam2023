@@ -6,18 +6,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class PlayerHealth : MonoBehaviour, IHealth
+public class PlayerHealth : Singleton<PlayerHealth>, IHealth
 {
-    public static PlayerHealth Instance;
-
     public float currentHealth;
     public float maxHealth;
-
-    void Awake()
-    {
-        if (Instance != null && Instance != this) Destroy(gameObject);
-        else Instance = this;
-    }
     
     void Start()
     {

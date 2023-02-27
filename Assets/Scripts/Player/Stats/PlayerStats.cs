@@ -4,10 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerStats : MonoBehaviour, IStats
+public class PlayerStats : PersistentSingleton<PlayerStats>, IStats
 {
-    public static PlayerStats Instance;
-    
     public float strengthValue = 1f;
     public float dexterityValue = 1f;
     public float intelligenceValue = 1f;
@@ -16,12 +14,6 @@ public class PlayerStats : MonoBehaviour, IStats
     
     private const float UpgradeValue = 0.2f;
 
-    void Awake()
-    {
-        if (Instance != null && Instance != this) Destroy(gameObject);
-        else Instance = this;
-        DontDestroyOnLoad(this);
-    }
     void Start()
     {
         UIManager.Instance.LoadStats();

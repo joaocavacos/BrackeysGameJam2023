@@ -5,10 +5,8 @@ using UnityEngine;
 using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : StaticInstance<PlayerController>
 {
-
-    public static PlayerController Instance;
     [HideInInspector] public Rigidbody2D rb;
     private Animator playerAnimator;
 
@@ -24,9 +22,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jumpForce;
     [SerializeField] private LayerMask groundLayer;
 
-    void Awake()
+    protected override void Awake()
     {
-        Instance = this;
+        base.Awake();
         rb = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
         playerStartPos = transform.position;

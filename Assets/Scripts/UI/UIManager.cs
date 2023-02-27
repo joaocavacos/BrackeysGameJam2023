@@ -6,9 +6,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIManager : MonoBehaviour
+public class UIManager : Singleton<UIManager>
 {
-    public static UIManager Instance;
     
     [SerializeField] private Slider healthSlider;
     [SerializeField] private TMP_Text healthText;
@@ -33,13 +32,6 @@ public class UIManager : MonoBehaviour
     public TMP_Text timeElapsedText;
     public TMP_Text killCountText;
     public TMP_Text currentRunPointsText;
-    
-    void Awake()
-    {
-        if (Instance != null && Instance != this) Destroy(gameObject);
-        else Instance = this;
-        DontDestroyOnLoad(this);
-    }
 
     void Start()
     {

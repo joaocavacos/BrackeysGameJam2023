@@ -4,20 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class SceneManager : MonoBehaviour
+public class SceneManager : Singleton<SceneManager>
 {
-    public static SceneManager Instance;
-    
     public bool isPaused = false;
     
     public UnityEvent OnGameOver;
     public UnityEvent OnGameRestart;
-
-    private void Awake()
-    {
-        if (Instance != null && Instance != this) Destroy(gameObject);
-        else Instance = this;
-    }
 
     public void GameOver()
     {

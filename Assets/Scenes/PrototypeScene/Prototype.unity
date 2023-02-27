@@ -985,7 +985,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 258282425}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.61, y: -2.32, z: 0}
+  m_LocalPosition: {x: 2.57, y: -2.32, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3187,7 +3187,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1015339782}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.03, z: 0}
+  m_LocalPosition: {x: -3.63, y: -1.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3208,7 +3208,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -4473,6 +4473,7 @@ GameObject:
   - component: {fileID: 1358618765}
   - component: {fileID: 1358618767}
   - component: {fileID: 1358618768}
+  - component: {fileID: 1358618769}
   m_Layer: 0
   m_Name: AbilityManager
   m_TagString: Untagged
@@ -4539,6 +4540,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 2
   shardPrefab: {fileID: 3742765272462940668, guid: 23c829764386e994a8e25f165d297e4f, type: 3}
+--- !u!114 &1358618769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358618764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5905519730420749aa185714b0f2bce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 2
+  attackPoint: {fileID: 1675626016}
+  abilityDamage: 20
+  forceStrength: 7.5
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &1376810764
 GameObject:
   m_ObjectHideFlags: 0
