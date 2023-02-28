@@ -4474,6 +4474,8 @@ GameObject:
   - component: {fileID: 1358618767}
   - component: {fileID: 1358618768}
   - component: {fileID: 1358618769}
+  - component: {fileID: 1358618770}
+  - component: {fileID: 1358618771}
   m_Layer: 0
   m_Name: AbilityManager
   m_TagString: Untagged
@@ -4559,6 +4561,36 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
+--- !u!114 &1358618770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358618764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3f6997bfa5cd384487b6c285d382084, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 5
+  lightingPrefab: {fileID: 6480025822527987216, guid: 02c5fa5b76d713f47910e6a121156429, type: 3}
+  distanceToCast: {x: 4, y: 1.5, z: 0}
+--- !u!114 &1358618771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358618764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b17f35a14bb8fb41a3aa649bd5acb94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 5
+  acidPrefab: {fileID: 2754715389803588595, guid: 11ac5074efcf61f4482aac17951284fc, type: 3}
+  distanceToCast: {x: 5, y: -0.7, z: 0}
 --- !u!1 &1376810764
 GameObject:
   m_ObjectHideFlags: 0
