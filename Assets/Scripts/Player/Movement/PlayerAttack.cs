@@ -23,7 +23,7 @@ public class PlayerAttack : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && canAttack)
+        if (Input.GetKeyDown(KeyCode.Space) && canAttack)
         {
             StartCoroutine(AttackingRate());
         }
