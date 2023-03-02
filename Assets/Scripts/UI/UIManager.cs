@@ -27,6 +27,8 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] private Button increaseVIT;
     [SerializeField] private Button decreaseINT;
     [SerializeField] private Button increaseINT;
+
+    [SerializeField] private Button applyBtn;
     
     [SerializeField] private TMP_Text totalPointsText;
     public TMP_Text timeElapsedText;
@@ -40,9 +42,11 @@ public class UIManager : Singleton<UIManager>
         dexterityText.text = PlayerStats.Instance.dexterityValue.ToString(CultureInfo.InvariantCulture);
         intelligenceText.text = PlayerStats.Instance.intelligenceValue.ToString(CultureInfo.InvariantCulture);
         vitalityText.text = PlayerStats.Instance.vitalityValue.ToString(CultureInfo.InvariantCulture);
-        UpdateHealth();
-        UpdateMaxHealth();
+        //UpdateHealth();
+        //UpdateMaxHealth();
         UpdateUpgradeButtons();
+        UpdateApply();
+        UpdatePoints();
     }
 
     public void UpdateHealth()
@@ -171,6 +175,15 @@ public class UIManager : Singleton<UIManager>
     }
 
     public void UpdatePoints() => totalPointsText.text = "Points: " + PointsManager.Instance.GetCurrentPoints().ToString(CultureInfo.InvariantCulture);
+
+    public void UpdateApply(){
+        if(AbilityManager.Instance.abilityCount < 2){
+            applyBtn.interactable = false;
+        }
+        else{
+            applyBtn.interactable = true;
+        }
+    }
 
     /*public void ApplyStats()
     {

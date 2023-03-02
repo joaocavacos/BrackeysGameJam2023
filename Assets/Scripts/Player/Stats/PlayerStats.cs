@@ -14,10 +14,10 @@ public class PlayerStats : PersistentSingleton<PlayerStats>, IStats
     
     private const float UpgradeValue = 0.2f;
 
-    void Start()
+    /*void Start()
     {
         UIManager.Instance.LoadStats();
-    }
+    }*/
 
     public void IncreaseStrength()
     {

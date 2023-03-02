@@ -20,12 +20,12 @@ public class Shard : MonoBehaviour
         if(other.CompareTag("Enemy"))
         {
             EnemyHealth enemy = other.GetComponent<EnemyHealth>();
-            enemy.LoseHealth(abilityDamage);
+            enemy.LoseHealth(abilityDamage * PlayerStats.Instance.intelligenceValue);
             Destroy(gameObject);
         }
         else if(other.CompareTag("Player"))
         {
-            PlayerHealth.Instance.LoseHealth(abilityDamage);
+            PlayerHealth.Instance.LoseHealth(abilityDamage * PlayerStats.Instance.intelligenceValue);
             Destroy(gameObject);
         }
         else{

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class PlayerAttack : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && canAttack)
+        if (Input.GetKeyDown(KeyCode.R) && canAttack)
         {
             StartCoroutine(AttackingRate());
         }

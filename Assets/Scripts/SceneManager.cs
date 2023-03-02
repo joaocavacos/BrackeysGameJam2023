@@ -10,6 +10,7 @@ public class SceneManager : Singleton<SceneManager>
     
     public UnityEvent OnGameOver;
     public UnityEvent OnGameRestart;
+    
 
     public void GameOver()
     {

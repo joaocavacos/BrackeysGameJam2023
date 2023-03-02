@@ -7,7 +7,7 @@ public class EnemyHealth : MonoBehaviour, IHealth
 {
 
     [SerializeField] private float maxHealth;
-    [SerializeField] private float currentHealth;
+    [SerializeField] public float currentHealth; 
     [SerializeField] private int pointsToDrop;
 
     private Animator enemyAnimator;
