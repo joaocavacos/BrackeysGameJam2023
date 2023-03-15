@@ -48,10 +48,4 @@ public class PlayerAttack : MonoBehaviour
         yield return new WaitForSeconds(attackRate);
         canAttack = true;
     }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
-        Gizmos.color = Color.yellow;
-    }
 }

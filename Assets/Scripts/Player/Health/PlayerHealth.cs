@@ -10,9 +10,12 @@ public class PlayerHealth : Singleton<PlayerHealth>, IHealth
 {
     public float currentHealth;
     public float maxHealth;
+
+    private Animator playerAnim;
     
     void Start()
     {
+        playerAnim = GetComponent<Animator>();
         maxHealth = 100 * PlayerStats.Instance.vitalityValue;
         currentHealth = maxHealth;
     }
@@ -31,7 +34,11 @@ public class PlayerHealth : Singleton<PlayerHealth>, IHealth
     public void LoseHealth(float damage)
     {
         currentHealth -= damage;
-        if (currentHealth <= 0) Die();
+        playerAnim.SetTrigger("Hurt");
+        if (currentHealth <= 0){
+            playerAnim.SetTrigger("Die");
+            Invoke("Die", 0.5f);
+        }
     }
 
     public void Heal(float amount)

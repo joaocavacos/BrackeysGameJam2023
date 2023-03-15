@@ -9,18 +9,13 @@ public class EnemyHealth : MonoBehaviour, IHealth
     [SerializeField] private float maxHealth;
     [SerializeField] public float currentHealth; 
     [SerializeField] private int pointsToDrop;
-
-    private Animator enemyAnimator;
-    
-    
-    void Awake()
-    {
-        currentHealth = maxHealth;
-    }
+    [SerializeField] private Animator enemyAnimator;
+    private Rigidbody2D rb;
 
     void Start()
     {
-        enemyAnimator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+        currentHealth = maxHealth;
     }
 
     public void LoseHealth(float damage)
@@ -32,7 +27,10 @@ public class EnemyHealth : MonoBehaviour, IHealth
 
     public void Die()
     {
+        rb.isKinematic = true;
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
         PointsManager.Instance.IncreaseKillPoints(pointsToDrop);
-        Destroy(gameObject);
+        enemyAnimator.SetTrigger("Die");
+        Destroy(gameObject, 0.35f);
     }
 }
