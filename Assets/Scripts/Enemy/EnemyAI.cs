@@ -56,7 +56,7 @@ public class EnemyAI : MonoBehaviour
 
     private void ChasePlayer(){
         
-        Debug.Log("Start chasing player");
+        //Debug.Log("Start chasing player");
 
         Vector3 direction = (playerTarget.position - transform.position).normalized;
 
