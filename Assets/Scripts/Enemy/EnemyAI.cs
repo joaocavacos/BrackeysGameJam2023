@@ -9,7 +9,7 @@ public class EnemyAI : MonoBehaviour
     private Transform enemyGFX;
 
     [Header("Patrol")]
-    private Transform playerTarget;
+    protected Transform playerTarget;
     [SerializeField] private Transform[] waypoints;
 
 
@@ -34,7 +34,7 @@ public class EnemyAI : MonoBehaviour
         currentPoint = waypoints[Random.Range(0, waypoints.Length)];
     }
 
-    private void Update() 
+    void Update() 
     {
         Flip();
         enemyAnim.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
