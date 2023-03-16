@@ -11,6 +11,8 @@ public class PlayerHealth : Singleton<PlayerHealth>, IHealth
     public float currentHealth;
     public float maxHealth;
 
+    [SerializeField] private List<int> statusEffectTickTimer = new List<int>();
+
     private Animator playerAnim;
     
     void Start()
@@ -38,6 +40,27 @@ public class PlayerHealth : Singleton<PlayerHealth>, IHealth
         if (currentHealth <= 0){
             playerAnim.SetTrigger("Die");
             Invoke("Die", 0.5f);
+        }
+    }
+
+    public void ApplyStatusEffect(float damage, int ticks, float statusTickTime){ //ticks => number of times the player will get affected by status effect | statusTickTime => activates ticks per statusTickTime
+        if(statusEffectTickTimer.Count <= 0){
+            statusEffectTickTimer.Add(ticks);
+            StartCoroutine(StatusEffect(damage, statusTickTime));
+        }else{
+            statusEffectTickTimer.Add(ticks);
+        }
+    }
+
+    private IEnumerator StatusEffect(float damage, float statusTickTime){
+        while(statusEffectTickTimer.Count > 0){
+            for (int i = 0; i < statusEffectTickTimer.Count; i++)
+            {
+                statusEffectTickTimer[i]--;
+            }
+            LoseHealth(damage);
+            statusEffectTickTimer.RemoveAll(i => i == 0);
+            yield return new WaitForSeconds(statusTickTime);
         }
     }
 

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 813303c3699876e429fcd330e210c568
+guid: 02faad17e15c8a7449c6b3187611193d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: noBKG_WitchIdle_strip_0
+      name: Cultist_Idle_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33bce34ce5b47de4eb57b0e384fb1c34
-      internalID: -1865769529
+      spriteID: de0f48d8b223ad34dad11e35b81625ab
+      internalID: 1142525600
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: noBKG_WitchIdle_strip_1
+      name: Cultist_Idle_1
       rect:
         serializedVersion: 2
         x: 64
@@ -152,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f292303bedb6a144eb602e61c740e322
-      internalID: -1055061497
+      spriteID: 146bc6346cddc784eb4fc9298f276503
+      internalID: -794677115
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: noBKG_WitchIdle_strip_2
+      name: Cultist_Idle_2
       rect:
         serializedVersion: 2
         x: 128
@@ -173,14 +173,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3dd1ef0d66946d0499150e4626d299b5
-      internalID: 1158111318
+      spriteID: 37606d8bbbb9f484e804eb31b93ea92b
+      internalID: 1603874641
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: noBKG_WitchIdle_strip_3
+      name: Cultist_Idle_3
       rect:
         serializedVersion: 2
         x: 192
@@ -194,14 +194,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 41827bfe3a6de8a49820405adc0de1b9
-      internalID: -496494329
+      spriteID: 2c4d8a61434555b4a8e0dd3a475b76ae
+      internalID: 62289304
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: noBKG_WitchIdle_strip_4
+      name: Cultist_Idle_4
       rect:
         serializedVersion: 2
         x: 256
@@ -215,14 +215,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b055700dfd9e7c48b44bfb1ab0e2a07
-      internalID: 32739945
+      spriteID: bc1f69431d2d2c847ac13950db86a21c
+      internalID: -508411248
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: noBKG_WitchIdle_strip_5
+      name: Cultist_Idle_5
       rect:
         serializedVersion: 2
         x: 320
@@ -236,14 +236,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be6fdcf28094240499fa5473496131dc
-      internalID: 520486702
+      spriteID: 542a2db2131ce474687e5ecd546fdbd9
+      internalID: 1065260091
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: noBKG_WitchIdle_strip_6
+      name: Cultist_Idle_6
       rect:
         serializedVersion: 2
         x: 384
@@ -257,8 +257,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a89a9d6590f1dbe46acbc4bf29e56f42
-      internalID: -1091902073
+      spriteID: 9a0a0950ef312a5429c8577324f7f5fd
+      internalID: -1179018725
       vertices: []
       indices: 
       edges: []
@@ -274,13 +274,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      noBKG_WitchIdle_strip_6: -1091902073
-      noBKG_WitchIdle_strip_5: 520486702
-      noBKG_WitchIdle_strip_3: -496494329
-      noBKG_WitchIdle_strip_2: 1158111318
-      noBKG_WitchIdle_strip_4: 32739945
-      noBKG_WitchIdle_strip_0: -1865769529
-      noBKG_WitchIdle_strip_1: -1055061497
+      Cultist_Idle_3: 62289304
+      Cultist_Idle_4: -508411248
+      Cultist_Idle_2: 1603874641
+      Cultist_Idle_1: -794677115
+      Cultist_Idle_6: -1179018725
+      Cultist_Idle_5: 1065260091
+      Cultist_Idle_0: 1142525600
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

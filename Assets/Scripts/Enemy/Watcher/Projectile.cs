@@ -16,10 +16,14 @@ public class Projectile : MonoBehaviour
         transform.Translate(playerDirection * projectileSpeed * Time.deltaTime);
     }
 
+    protected virtual void DealDamage(){
+        PlayerHealth.Instance.LoseHealth(attackDamage);
+        Destroy(gameObject);
+    }
+
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.CompareTag("Player")){
-            PlayerHealth.Instance.LoseHealth(attackDamage);
-            Destroy(gameObject);
+            DealDamage();
         }
     }
 }

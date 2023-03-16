@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 131b4373bc8d8444c9e1500ab1e5a26e
+guid: e06512c4808c6104d83d62294c3255a9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: noBKG_WitchThrow_strip_0
+      name: Cultist_Death_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ac8e94c0c209624098997260b99b1b5
-      internalID: -1662296770
+      spriteID: 0256f46a22d9cb746924270df8e1aedf
+      internalID: 208655891
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: noBKG_WitchThrow_strip_1
+      name: Cultist_Death_1
       rect:
         serializedVersion: 2
         x: 64
@@ -152,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba47f5c957effc641b988527568a448b
-      internalID: 1427729698
+      spriteID: af14ebaba41ebff43ace9e6e3faea697
+      internalID: -1370533236
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: noBKG_WitchThrow_strip_2
+      name: Cultist_Death_2
       rect:
         serializedVersion: 2
         x: 128
@@ -173,14 +173,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 280b816daa05bcc49bb46b549f32bd33
-      internalID: -467543988
+      spriteID: fff272bbaeb501b448309c05bf808a3c
+      internalID: -2002834250
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: noBKG_WitchThrow_strip_3
+      name: Cultist_Death_3
       rect:
         serializedVersion: 2
         x: 192
@@ -194,14 +194,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9ad241ea5ff2d4488e57a0d6c0c4a00
-      internalID: -744702011
+      spriteID: 3f19777f99369d644a0fde4fbaa5c4d1
+      internalID: -200747135
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: noBKG_WitchThrow_strip_4
+      name: Cultist_Death_4
       rect:
         serializedVersion: 2
         x: 256
@@ -215,14 +215,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 516e23b256088c84bb201bc9ad255e0a
-      internalID: -1580044023
+      spriteID: eb10b16456655d04fa7677c6cc0d5efe
+      internalID: 769126116
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: noBKG_WitchThrow_strip_5
+      name: Cultist_Death_5
       rect:
         serializedVersion: 2
         x: 320
@@ -236,14 +236,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 19b4b4794ca25774babeadf27b8c45a9
-      internalID: 1754107425
+      spriteID: 8adbff27bad931d48b3373ef7c8723a0
+      internalID: -781142860
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: noBKG_WitchThrow_strip_6
+      name: Cultist_Death_6
       rect:
         serializedVersion: 2
         x: 384
@@ -257,14 +257,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac4f9984ff1e10e4b947dbcfb13526e9
-      internalID: -1812080255
+      spriteID: d56edf6f648439e4dba21e41467f93b7
+      internalID: -1041451118
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: noBKG_WitchThrow_strip_7
+      name: Cultist_Death_7
       rect:
         serializedVersion: 2
         x: 448
@@ -278,14 +278,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e626b79650fb0104cb673a3a1f48b22b
-      internalID: -252830530
+      spriteID: 4718161b44db32a418112258c0765e9b
+      internalID: -1897800031
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: noBKG_WitchThrow_strip_8
+      name: Cultist_Death_8
       rect:
         serializedVersion: 2
         x: 512
@@ -299,14 +299,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e811404d55bb739459a07e05cf5ec03a
-      internalID: 638936342
+      spriteID: 43e288b9561c7a14bbbbcfdd3f1ac37f
+      internalID: 1212749709
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: noBKG_WitchThrow_strip_9
+      name: Cultist_Death_9
       rect:
         serializedVersion: 2
         x: 576
@@ -320,14 +320,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b7d5016bb6a8421408876dba0988251f
-      internalID: 1428547300
+      spriteID: 6d929f4384348af45a38e57896a49701
+      internalID: -1310335722
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: noBKG_WitchThrow_strip_10
+      name: Cultist_Death_10
       rect:
         serializedVersion: 2
         x: 640
@@ -341,14 +341,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6bcc34c312ffea24c823fa52bce48e23
-      internalID: -1032294568
+      spriteID: 635fba7629444b548a51a4b7ca2daf0d
+      internalID: -1988538328
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: noBKG_WitchThrow_strip_11
+      name: Cultist_Death_11
       rect:
         serializedVersion: 2
         x: 704
@@ -362,134 +362,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d8ba74009f9b3a45b08af13855a7530
-      internalID: 675611532
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: noBKG_WitchThrow_strip_12
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 78a0aafaae40b2d4e9d567b203fd7e9b
-      internalID: -1316200649
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: noBKG_WitchThrow_strip_13
-      rect:
-        serializedVersion: 2
-        x: 832
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 255770ffc23eaaf49be182ae240232b7
-      internalID: 760390985
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: noBKG_WitchThrow_strip_14
-      rect:
-        serializedVersion: 2
-        x: 896
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 83d8830a643ca5d478aca70f9d4da1a8
-      internalID: -1141029932
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: noBKG_WitchThrow_strip_15
-      rect:
-        serializedVersion: 2
-        x: 960
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f923b00d3e5407b479b091fb047c16f4
-      internalID: -959292869
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: noBKG_WitchThrow_strip_16
-      rect:
-        serializedVersion: 2
-        x: 1024
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 72697bfc68eddb54f8f72323eb641de1
-      internalID: -249301920
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: noBKG_WitchThrow_strip_17
-      rect:
-        serializedVersion: 2
-        x: 1088
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 76ac36ce44ac0bb40bf14743b3eeef2d
-      internalID: 574906716
+      spriteID: 8d16a67fac7d9154aad1af8d129c270b
+      internalID: -2016199551
       vertices: []
       indices: 
       edges: []
@@ -505,24 +379,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      noBKG_WitchThrow_strip_7: -252830530
-      noBKG_WitchThrow_strip_5: 1754107425
-      noBKG_WitchThrow_strip_3: -744702011
-      noBKG_WitchThrow_strip_9: 1428547300
-      noBKG_WitchThrow_strip_6: -1812080255
-      noBKG_WitchThrow_strip_1: 1427729698
-      noBKG_WitchThrow_strip_0: -1662296770
-      noBKG_WitchThrow_strip_13: 760390985
-      noBKG_WitchThrow_strip_15: -959292869
-      noBKG_WitchThrow_strip_4: -1580044023
-      noBKG_WitchThrow_strip_16: -249301920
-      noBKG_WitchThrow_strip_2: -467543988
-      noBKG_WitchThrow_strip_11: 675611532
-      noBKG_WitchThrow_strip_8: 638936342
-      noBKG_WitchThrow_strip_10: -1032294568
-      noBKG_WitchThrow_strip_17: 574906716
-      noBKG_WitchThrow_strip_12: -1316200649
-      noBKG_WitchThrow_strip_14: -1141029932
+      Cultist_Death_3: -200747135
+      Cultist_Death_6: -1041451118
+      Cultist_Death_1: -1370533236
+      Cultist_Death_4: 769126116
+      Cultist_Death_11: -2016199551
+      Cultist_Death_10: -1988538328
+      Cultist_Death_5: -781142860
+      Cultist_Death_0: 208655891
+      Cultist_Death_8: 1212749709
+      Cultist_Death_7: -1897800031
+      Cultist_Death_9: -1310335722
+      Cultist_Death_2: -2002834250
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

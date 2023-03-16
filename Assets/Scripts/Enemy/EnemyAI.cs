@@ -46,6 +46,7 @@ public class EnemyAI : MonoBehaviour
 
     private void Patrol()
     {
+        //StopAllCoroutines();
         Vector3 directionToWaypoint = (currentPoint.position - transform.position).normalized;
 
         rb.velocity = moveSpeed * new Vector2(directionToWaypoint.x, 0f);
@@ -57,6 +58,7 @@ public class EnemyAI : MonoBehaviour
     private void ChasePlayer(){
         
         //Debug.Log("Start chasing player");
+        //StopAllCoroutines();
 
         Vector3 direction = (playerTarget.position - transform.position).normalized;
 
