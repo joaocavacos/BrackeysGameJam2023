@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4658019547953469833}
   - component: {fileID: 3342984728834955804}
   m_Layer: 0
-  m_Name: textDamagePopup
+  m_Name: damagePopup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37,7 +37,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.85, y: 0.28}
+  m_AnchoredPosition: {x: 2, y: 0}
   m_SizeDelta: {x: 3, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &7674449539476997301
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4283782655
+    rgba: 5592575
   m_fontColor: {r: 1, g: 0.33490568, b: 0.33490568, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3

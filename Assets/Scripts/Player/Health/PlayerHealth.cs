@@ -36,14 +36,16 @@ public class PlayerHealth : Singleton<PlayerHealth>, IHealth
     public void LoseHealth(float damage)
     {
         currentHealth -= damage;
+        DamagePopup.Create(transform.position + (Vector3.up * 2), Mathf.RoundToInt(damage));
         playerAnim.SetTrigger("Hurt");
         if (currentHealth <= 0){
             playerAnim.SetTrigger("Die");
             Invoke("Die", 0.5f);
         }
     }
-
-    public void ApplyStatusEffect(float damage, int ticks, float statusTickTime){ //ticks => number of times the player will get affected by status effect | statusTickTime => activates ticks per statusTickTime
+    
+    //ticks => number of times the player will get affected by status effect | statusTickTime => activates ticks per statusTickTime
+    public void ApplyStatusEffect(float damage, int ticks, float statusTickTime){ 
         if(statusEffectTickTimer.Count <= 0){
             statusEffectTickTimer.Add(ticks);
             StartCoroutine(StatusEffect(damage, statusTickTime));

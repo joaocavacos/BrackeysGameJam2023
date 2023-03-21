@@ -9,19 +9,20 @@ public class EnemyHealth : MonoBehaviour, IHealth
     [SerializeField] private float maxHealth;
     [SerializeField] public float currentHealth; 
     [SerializeField] private int pointsToDrop;
-    [SerializeField] private Animator enemyAnimator;
+    private Animator enemyAnimator;
     private Rigidbody2D rb;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        enemyAnimator = GetComponent<Animator>();
         currentHealth = maxHealth;
     }
 
     public void LoseHealth(float damage)
     {
         currentHealth -= damage;
-        DamagePopup.Create(transform.position + (Vector3.up * 3), Mathf.RoundToInt(damage));
+        DamagePopup.Create(transform.position + (Vector3.up * 2), Mathf.RoundToInt(damage));
         enemyAnimator.SetTrigger("Hurt");
         if(currentHealth <= 0) Die();
     }

@@ -22,15 +22,15 @@ public class EnemyAI : MonoBehaviour
     private bool canAttack = true;
     
     private Transform currentPoint;
-    private Rigidbody2D rb;
+    [HideInInspector] public Rigidbody2D rb;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        enemyGFX = gameObject.transform.Find("EnemyGFX");
+        enemyGFX = GetComponent<Transform>();
         playerTarget = PlayerController.Instance.gameObject.transform;
         playerLayer = LayerMask.GetMask("Player");
-        enemyAnim = enemyGFX.GetComponent<Animator>();
+        enemyAnim = GetComponent<Animator>();
         currentPoint = waypoints[Random.Range(0, waypoints.Length)];
     }
 
@@ -46,7 +46,6 @@ public class EnemyAI : MonoBehaviour
 
     private void Patrol()
     {
-        //StopAllCoroutines();
         Vector3 directionToWaypoint = (currentPoint.position - transform.position).normalized;
 
         rb.velocity = moveSpeed * new Vector2(directionToWaypoint.x, 0f);
@@ -56,9 +55,6 @@ public class EnemyAI : MonoBehaviour
     }
 
     private void ChasePlayer(){
-        
-        //Debug.Log("Start chasing player");
-        //StopAllCoroutines();
 
         Vector3 direction = (playerTarget.position - transform.position).normalized;
 
@@ -66,12 +62,12 @@ public class EnemyAI : MonoBehaviour
     }
 
     public virtual void Attack() {
-        enemyAnim.SetTrigger("Attack");
+        //enemyAnim.SetTrigger("Attack");
     }
 
     private IEnumerator AttackingRate(){
         canAttack = false;
-        Attack();
+        enemyAnim.SetTrigger("Attack");
         yield return new WaitForSeconds(attackRate);
         canAttack = true;
     }
