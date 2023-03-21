@@ -21,6 +21,7 @@ public class EnemyHealth : MonoBehaviour, IHealth
     public void LoseHealth(float damage)
     {
         currentHealth -= damage;
+        DamagePopup.Create(transform.position + (Vector3.up * 3), Mathf.RoundToInt(damage));
         enemyAnimator.SetTrigger("Hurt");
         if(currentHealth <= 0) Die();
     }

@@ -35,6 +35,8 @@ public class UIManager : Singleton<UIManager>
     public TMP_Text killCountText;
     public TMP_Text currentRunPointsText;
 
+    public Transform damagePopupObject;
+
     void Start()
     {
         agilityText.text = PlayerStats.Instance.agilityValue.ToString(CultureInfo.InvariantCulture);
