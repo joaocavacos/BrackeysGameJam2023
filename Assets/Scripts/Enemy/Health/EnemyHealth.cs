@@ -12,7 +12,7 @@ public class EnemyHealth : MonoBehaviour, IHealth
     private Animator enemyAnimator;
     private Rigidbody2D rb;
 
-    void Start()
+    private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         enemyAnimator = GetComponent<Animator>();
@@ -22,12 +22,11 @@ public class EnemyHealth : MonoBehaviour, IHealth
     public void LoseHealth(float damage)
     {
         currentHealth -= damage;
-        DamagePopup.Create(transform.position + (Vector3.up * 2), Mathf.RoundToInt(damage));
         enemyAnimator.SetTrigger("Hurt");
         if(currentHealth <= 0) Die();
     }
 
-    public void Die()
+    private void Die()
     {
         rb.isKinematic = true;
         rb.constraints = RigidbodyConstraints2D.FreezeAll;

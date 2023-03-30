@@ -8,7 +8,7 @@ public class Shard : MonoBehaviour
     [SerializeField] private float shardSpeed;
     private float startScale;
     
-    private void Start() {
+    private void OnEnable() {
         startScale = PlayerController.Instance.transform.localScale.x;
     }
 

@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
+using Random = UnityEngine.Random;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -12,6 +14,7 @@ public class PlayerAttack : MonoBehaviour
 
     [SerializeField] private float attackRange;
     [SerializeField] private float attackDamage;
+    [SerializeField] private float criticalDamage;
     [SerializeField] private float attackRate;
     private bool canAttack = true;
 
@@ -20,6 +23,7 @@ public class PlayerAttack : MonoBehaviour
     private void Start()
     {
         playerAnimator = GetComponent<Animator>();
+        criticalDamage = attackDamage * 2;
     }
 
     void Update()
@@ -33,12 +37,24 @@ public class PlayerAttack : MonoBehaviour
     private void Attack()
     {
         var enemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
-        //playerAnimator.SetTrigger("Attack");
         
         foreach (var enemy in enemies)
         {
-            enemy.GetComponent<EnemyHealth>().LoseHealth(attackDamage * PlayerStats.Instance.strengthValue);
+            var criticalChance = Random.Range(0, 100) < Mathf.RoundToInt(15 * PlayerStats.Instance.dexterityValue);
+            Debug.Log("Critical hit? = " + criticalChance);
+            if (criticalChance)
+            {
+                attackDamage = criticalDamage;
+                enemy.GetComponent<EnemyHealth>().LoseHealth(attackDamage * PlayerStats.Instance.strengthValue);
+                
+            }
+            else
+            {
+                attackDamage = 30f;
+                enemy.GetComponent<EnemyHealth>().LoseHealth(attackDamage * PlayerStats.Instance.strengthValue);
+            }
             enemy.GetComponent<EnemyAI>().rb.AddForce((PlayerController.Instance.transform.localScale.x * Vector2.right) * 7.5f, ForceMode2D.Impulse);
+            DamagePopup.Create(enemy.transform.position + (Vector3.up * 2), Mathf.RoundToInt(attackDamage), criticalChance);
         }
     }
 

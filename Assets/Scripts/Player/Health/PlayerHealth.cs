@@ -15,7 +15,7 @@ public class PlayerHealth : Singleton<PlayerHealth>, IHealth
 
     private Animator playerAnim;
     
-    void Start()
+    private void Start()
     {
         playerAnim = GetComponent<Animator>();
         maxHealth = 100 * PlayerStats.Instance.vitalityValue;
@@ -28,7 +28,7 @@ public class PlayerHealth : Singleton<PlayerHealth>, IHealth
         currentHealth = maxHealth;
     }
 
-    void Update()
+    private void Update()
     {
         UIManager.Instance.UpdateHealth();
     }
@@ -36,7 +36,7 @@ public class PlayerHealth : Singleton<PlayerHealth>, IHealth
     public void LoseHealth(float damage)
     {
         currentHealth -= damage;
-        DamagePopup.Create(transform.position + (Vector3.up * 2), Mathf.RoundToInt(damage));
+        DamagePopup.Create(transform.position + (Vector3.up * 2), Mathf.RoundToInt(damage), false);
         playerAnim.SetTrigger("Hurt");
         if (currentHealth <= 0){
             playerAnim.SetTrigger("Die");
@@ -49,7 +49,9 @@ public class PlayerHealth : Singleton<PlayerHealth>, IHealth
         if(statusEffectTickTimer.Count <= 0){
             statusEffectTickTimer.Add(ticks);
             StartCoroutine(StatusEffect(damage, statusTickTime));
-        }else{
+        }
+        else
+        {
             statusEffectTickTimer.Add(ticks);
         }
     }
