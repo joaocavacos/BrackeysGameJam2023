@@ -23,7 +23,8 @@ public class EnemyHealth : MonoBehaviour, IHealth
     {
         currentHealth -= damage;
         enemyAnimator.SetTrigger("Hurt");
-        if(currentHealth <= 0) Die();
+        DamagePopup.Create(transform.position + (Vector3.up * 2), Mathf.RoundToInt(damage), false);
+        if (currentHealth <= 0) Die();
     }
 
     private void Die()

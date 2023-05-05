@@ -13,7 +13,7 @@ public class Shard : MonoBehaviour
     }
 
     private void Update() {
-        transform.Translate((transform.right * -startScale) * shardSpeed * Time.deltaTime);
+        transform.Translate(transform.right * (-startScale * shardSpeed * Time.deltaTime));
     }
 
     private void OnTriggerEnter2D(Collider2D other) {

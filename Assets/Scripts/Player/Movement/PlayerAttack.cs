@@ -11,11 +11,13 @@ public class PlayerAttack : MonoBehaviour
 
     [SerializeField] private Transform attackPoint;
     [SerializeField] private LayerMask enemyLayer;
-
+    
+    private const float BaseCriticalChance = 15f; //15% chance
     [SerializeField] private float attackRange;
     [SerializeField] private float attackDamage;
     [SerializeField] private float criticalDamage;
     [SerializeField] private float attackRate;
+    
     private bool canAttack = true;
 
     private Animator playerAnimator;
@@ -40,7 +42,7 @@ public class PlayerAttack : MonoBehaviour
         
         foreach (var enemy in enemies)
         {
-            var criticalChance = Random.Range(0, 100) < Mathf.RoundToInt(15 * PlayerStats.Instance.dexterityValue);
+            var criticalChance = Random.Range(0, 100) < Mathf.RoundToInt(BaseCriticalChance * PlayerStats.Instance.dexterityValue);
             Debug.Log("Critical hit? = " + criticalChance);
             if (criticalChance)
             {

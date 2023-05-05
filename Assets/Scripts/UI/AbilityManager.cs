@@ -12,8 +12,8 @@ public class AbilityManager : StaticInstance<AbilityManager>
 
     [SerializeField] private TMP_Text abilities1Text;
     [SerializeField] private TMP_Text abilities2Text;
-    [SerializeField] private Image ability1Image;
-    [SerializeField] private Image ability2Image;
+    public Image ability1Image;
+    public Image ability2Image;
 
     public int abilityCount = 0;
 
@@ -21,6 +21,11 @@ public class AbilityManager : StaticInstance<AbilityManager>
     protected override void Awake() {
         base.Awake();
         abilityList = new List<Ability>();
+    }
+
+    private void Update()
+    {
+        
     }
 
     public void AddAbility(Ability ability) => abilityList.Insert(0, ability);
@@ -40,12 +45,16 @@ public class AbilityManager : StaticInstance<AbilityManager>
             }
         }
         
-        if(abilityCount == 1){ 
-            abilities1Text.transform.position = abilityList[0].AbilityPickBtn.transform.position;
-        }else if(abilityCount >= 2){
-            abilities1Text.transform.position = abilityList[0].AbilityPickBtn.transform.position;
-            abilities2Text.transform.position = abilityList[1].AbilityPickBtn.transform.position;
-            UIManager.Instance.UpdateApply();
+        switch (abilityCount)
+        {
+            case 1:
+                abilities1Text.transform.position = abilityList[0].AbilityPickBtn.transform.position;
+                break;
+            case >= 2:
+                abilities1Text.transform.position = abilityList[0].AbilityPickBtn.transform.position;
+                abilities2Text.transform.position = abilityList[1].AbilityPickBtn.transform.position;
+                UIManager.Instance.UpdateApply();
+                break;
         }
 
     }
@@ -61,5 +70,10 @@ public class AbilityManager : StaticInstance<AbilityManager>
     public void UpdateAbilitiesText(){
         abilities1Text.transform.position = abilityList[0].gameObject.transform.position;
         abilities2Text.transform.position = abilityList[1].gameObject.transform.position;
+    }
+
+    public void DisableImageCooldown()
+    {
+
     }
 }

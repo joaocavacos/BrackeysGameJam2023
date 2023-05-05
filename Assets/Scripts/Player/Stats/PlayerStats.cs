@@ -32,8 +32,8 @@ public class PlayerStats : PersistentSingleton<PlayerStats>, IStats
         var previousValue = PointsManager.Instance.upgradeCostSTR / 2;
         PointsManager.Instance.upgradeCostSTR -= previousValue;
         PointsManager.Instance.AddTotalPoints(PointsManager.Instance.upgradeCostSTR);
-    } 
-    
+    }
+
     public void IncreaseDexterity()
     {
         dexterityValue += UpgradeValue;

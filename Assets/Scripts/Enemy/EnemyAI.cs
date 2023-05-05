@@ -39,9 +39,9 @@ public class EnemyAI : MonoBehaviour
         Flip();
         enemyAnim.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
 
-        if(!FindPlayer() && !IsAttackRange()) Patrol();
-        else if(FindPlayer() && !IsAttackRange()) ChasePlayer();
-        else if(FindPlayer() && IsAttackRange() && canAttack) StartCoroutine(AttackingRate());
+        //if(!FindPlayer() && !IsAttackRange()) Patrol();
+        if(!IsAttackRange()) ChasePlayer();
+        else if(IsAttackRange() && canAttack) StartCoroutine(AttackingRate());
     }
 
     private void Patrol()

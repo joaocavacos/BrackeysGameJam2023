@@ -130,9 +130,18 @@ public class UIManager : Singleton<UIManager>
     } 
     void UpdateIncreaseDexterity()
     {
-        dexterityText.text = PlayerStats.Instance.dexterityValue.ToString(CultureInfo.InvariantCulture);
+        if (PlayerStats.Instance.dexterityValue >= 6.6f)
+        {
+            increaseDEX.interactable = false;
+            PlayerStats.Instance.dexterityValue = 6.6f;
+        }
+        else
+        {
+            dexterityText.text = PlayerStats.Instance.dexterityValue.ToString(CultureInfo.InvariantCulture);
 
-        increaseDEX.interactable = !(PointsManager.Instance.upgradeCostDEX > PointsManager.Instance.GetCurrentPoints());
+            increaseDEX.interactable = !(PointsManager.Instance.upgradeCostDEX > PointsManager.Instance.GetCurrentPoints());
+        }
+        
     }
 
     void UpdateDecreaseIntelligence()
